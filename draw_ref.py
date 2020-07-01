@@ -14,7 +14,7 @@ from PyQt5.QtCore import QSocketNotifier
 from PyQt5 import uic
 import numpy as np
 from pyqtgraph.ptime import time
-
+from pyqtgraph.Point import Point
 
 #ENDPOINT = "ipc://routing.ipc"
 ENDPOINT = "tcp://localhost:5555"
@@ -34,8 +34,14 @@ class WindowClass(QMainWindow, form_class) :
         self.txtBrw.ensureCursorVisible()
         self._log('[Thread] started')
         self.buff_size = 200
+        self.vLine = pg.InfiniteLine(angle=90, movable=False)
+        self.hLine = pg.InfiniteLine(angle=0, movable=False)
+        
+        self.updateButton.clicked.connect(self.updateButtonFunction)
         #버튼에 기능을 연결하는 코드
         self.p = self.gview
+        self.p.addItem(self.vLine, ignoreBounds=True)
+        self.p.addItem(self.hLine, ignoreBounds=True)
         print('widget size', self.p.geometry())
         print('pixel size' , self.p.pixelSize())
         self.p.scene().sigMouseClicked.connect(self.mouse_clicked)
@@ -49,11 +55,17 @@ class WindowClass(QMainWindow, form_class) :
         self.data = np.zeros(self.buff_size)
 
         self.time= np.zeros(self.buff_size)
+        self.c_pts.append(Point(0,0))
         #self.data[:-1]=self.data[1:];self.data[-1] = float(0)
         #self.time[:-1]=self.time[1:];self.time[-1] = 0
         self.sizeArray = (np.random.random(500) * 20.).astype(int)
         self.ptr = 0
             
+        self.twidget.setRowCount(1)
+        self.twidget.setColumnCount(2)
+        self.twidget.setHorizontalHeaderLabels(["X","Y"])
+        self.twidget.setItem(0,0, QTableWidgetItem("0"))
+        self.twidget.cellChanged.connect(self.cell_changed)
         self.lastTime = time()
 
         self.nowTime = time()
@@ -61,12 +73,38 @@ class WindowClass(QMainWindow, form_class) :
         self.fps = -1.0#1.0/dt
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self._update)
-        self.timer.start(0)
+#        self.timer.start(0)
         
         #sub_msg = self._sub.recv()
         #self._log(sub_msg)
+    def updateButtonFunction(self):
+        self._update()
+    @pyqtSlot()
+    def cell_changed(self):
+        print('cell changed')
+        try:
+            self.cell = self.twidget.currentItem()
+            print('[cell ch] cell ch',self.cell.text())
+            self.col = self.twidget.currentItem().column()
+            self.row = self.twidget.currentItem().row()
+            print('[cell ch] row,col',self.row,self.col)
+            p_var = self.c_pts[self.row] #(x,y)
+            #self.c_pts[self.row] = Point(0,0)  # x = (i,0), y = (i,1)
+            print(p_var.x())
+            print(self.row, self.c_pts[self.row])
+            if self.col is 0:
+                print('self.col is 0')
+                print(self.cell.text())
+                self.c_pts[self.row] = Point(int(self.cell.text()),p_var.y())
+            else:
+                print('self.col is 1')
+                self.c_pts[self.row] = Point(p_var.x(),int(self.cell.text()))
+            print('x = %d' %(self.c_pts[self.row].x()))
+            print('y= %d'%(self.c_pts[self.row].y()))
+        except:
+            pass
     def mouseMoved(self,evt):
-        print(evt)
+        #print(evt)
 #        pos = evt.scenePos()
 #        if self.p.sceneBoundingRect().contains(pos):
 #            mousePoint = self.vb.mapSceneToView(pos)
@@ -79,6 +117,10 @@ class WindowClass(QMainWindow, form_class) :
             index = int(mousePoint.x())
             if index > 0 :
                 self.coorlabel.setText("<span style='font-size: 12pt'><span style='color: green'>x=%0.1f y=%0.1f</span>" % (mousePoint.x(),mousePoint.y()))
+            self.vLine.setPos(mousePoint.x())
+            self.hLine.setPos(mousePoint.y())
+#            self.p.clear()
+#            self._update()
     def mouse_clicked(self,evt):
         print("test")
         print(evt)
@@ -86,7 +128,10 @@ class WindowClass(QMainWindow, form_class) :
         #m_pt = self.vb.mapSceneToView(evt.pos())
         m_pt = self.vb.mapSceneToView(evt.scenePos())
         print('m_pt', m_pt)
+        print('m_pt.x', m_pt.x())
         self.c_pts.append(m_pt)
+        
+        self._update()
 #        # mouseClickEvent is a pyqtgraph.GraphicsScene.mouseEvents.MouseClickEvent
 #        print('clicked plot 0x{:x}, event: {}'.format(id(self), mouseClickEvent))
 #        print('pixel size' , self.p.pixelSize())
@@ -138,11 +183,21 @@ class WindowClass(QMainWindow, form_class) :
         #self.p.enableAutoRange(axis='x')
         #self.p.enableAutoRange(axis='x')
         self.size = self.sizeArray
-        rtval = np.random.randint(0,100)
+        c_pts_size = len(self.c_pts)
         for i in range(len(self.c_pts)):
             self.data[i] = self.c_pts[i].y()
             self.time[i] = self.c_pts[i].x()
+            print("[%d]:%d "%(i, self.data[i]))
+            row_count =  self.twidget.rowCount()
+            if row_count < c_pts_size:
+                self.twidget.setRowCount(row_count+1)
 
+            x_item = QTableWidgetItem(str(self.c_pts[i].x()))
+            y_item = QTableWidgetItem(str(self.c_pts[i].y()))
+            x_item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
+            y_item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
+            self.twidget.setItem(i,0,x_item)
+            self.twidget.setItem(i,1,y_item)
         #self.data[:-1]=self.data[1:];self.data[-1] = float(rtval)
         #self.time[:-1]=self.time[1:];self.time[-1] = self.ptr
         curve = pg.PlotCurveItem(x=self.time, y=self.data,
