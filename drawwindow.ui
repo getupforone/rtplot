@@ -6,41 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>915</width>
-    <height>737</height>
+    <width>1556</width>
+    <height>818</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="PlotWidget" name="gview">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>591</width>
-      <height>500</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTableWidget" name="twidget">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>10</y>
-      <width>256</width>
-      <height>501</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QTextBrowser" name="txtBrw">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>550</y>
+      <x>930</x>
+      <y>680</y>
       <width>601</width>
-      <height>131</height>
+      <height>71</height>
      </rect>
     </property>
     <property name="mouseTracking">
@@ -56,10 +36,10 @@
    <widget class="QLabel" name="coorlabel">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>520</y>
+      <x>930</x>
+      <y>650</y>
       <width>151</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -72,15 +52,3148 @@
    <widget class="QPushButton" name="updateButton">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>540</y>
-      <width>113</width>
-      <height>32</height>
+      <x>1400</x>
+      <y>520</y>
+      <width>121</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>updateButton</string>
     </property>
+   </widget>
+   <widget class="QPushButton" name="Save2FileButton">
+    <property name="geometry">
+     <rect>
+      <x>1400</x>
+      <y>640</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save2FileButton</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="refNameTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>650</y>
+      <width>301</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>920</width>
+      <height>750</height>
+     </rect>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="usesScrollButtons">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="PF1_tab">
+     <attribute name="title">
+      <string>PF1</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="PlotWidget" name="gview">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_6">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="PlotWidget" name="gview_2">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_2">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_7">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="PlotWidget" name="gview_3">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_3">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_6">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_11">
+           <item>
+            <widget class="PlotWidget" name="gview_9">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_8">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="PlotWidget" name="gview_5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_5">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="PF2_tab">
+     <attribute name="title">
+      <string>PF2</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_13">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_12">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_14">
+         <item>
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_16">
+           <item>
+            <widget class="PlotWidget" name="gview_14">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_13">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_14">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_13">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_15">
+         <item>
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_17">
+           <item>
+            <widget class="PlotWidget" name="gview_15">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_14">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_15">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_14">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_16">
+         <item>
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_18">
+           <item>
+            <widget class="PlotWidget" name="gview_16">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_15">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_16">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_15">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_17">
+         <item>
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_19">
+           <item>
+            <widget class="PlotWidget" name="gview_17">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_16">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_17">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_16">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_18">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_20">
+           <item>
+            <widget class="PlotWidget" name="gview_18">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_17">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="PF3_tab">
+     <attribute name="title">
+      <string>PF3U</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_18">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_17">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_19">
+         <item>
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_21">
+           <item>
+            <widget class="PlotWidget" name="gview_19">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_18">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_19">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_18">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_20">
+         <item>
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_22">
+           <item>
+            <widget class="PlotWidget" name="gview_20">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_19">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_20">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_19">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_21">
+         <item>
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_23">
+           <item>
+            <widget class="PlotWidget" name="gview_21">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_20">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_21">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_20">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_22">
+         <item>
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_24">
+           <item>
+            <widget class="PlotWidget" name="gview_22">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_21">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_22">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_21">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_23">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_25">
+           <item>
+            <widget class="PlotWidget" name="gview_23">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_22">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>PF3L</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_34">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_27">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_29">
+         <item>
+          <widget class="QLabel" name="label_28">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_31">
+           <item>
+            <widget class="PlotWidget" name="gview_29">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_28">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_35">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_28">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_30">
+         <item>
+          <widget class="QLabel" name="label_29">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_32">
+           <item>
+            <widget class="PlotWidget" name="gview_30">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_29">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_36">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_29">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_31">
+         <item>
+          <widget class="QLabel" name="label_30">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_33">
+           <item>
+            <widget class="PlotWidget" name="gview_31">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_30">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_37">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_30">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_32">
+         <item>
+          <widget class="QLabel" name="label_31">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_34">
+           <item>
+            <widget class="PlotWidget" name="gview_32">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_31">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_38">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_31">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_33">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_32">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_35">
+           <item>
+            <widget class="PlotWidget" name="gview_33">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_32">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>PF4U</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_39">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_32">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_34">
+         <item>
+          <widget class="QLabel" name="label_33">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_36">
+           <item>
+            <widget class="PlotWidget" name="gview_34">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_33">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_40">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_33">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_35">
+         <item>
+          <widget class="QLabel" name="label_34">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_37">
+           <item>
+            <widget class="PlotWidget" name="gview_35">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_34">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_41">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_34">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_36">
+         <item>
+          <widget class="QLabel" name="label_35">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_38">
+           <item>
+            <widget class="PlotWidget" name="gview_36">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_35">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_42">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_35">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_37">
+         <item>
+          <widget class="QLabel" name="label_36">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_39">
+           <item>
+            <widget class="PlotWidget" name="gview_37">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_36">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_43">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_36">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_38">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_37">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_40">
+           <item>
+            <widget class="PlotWidget" name="gview_38">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_37">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_28">
+     <attribute name="title">
+      <string>PF4L</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_44">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_37">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_39">
+         <item>
+          <widget class="QLabel" name="label_38">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_41">
+           <item>
+            <widget class="PlotWidget" name="gview_39">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_38">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_45">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_38">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_40">
+         <item>
+          <widget class="QLabel" name="label_39">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_42">
+           <item>
+            <widget class="PlotWidget" name="gview_40">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_39">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_46">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_39">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_41">
+         <item>
+          <widget class="QLabel" name="label_40">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_43">
+           <item>
+            <widget class="PlotWidget" name="gview_41">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_40">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_47">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_40">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_42">
+         <item>
+          <widget class="QLabel" name="label_41">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_44">
+           <item>
+            <widget class="PlotWidget" name="gview_42">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_41">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_48">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_41">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_43">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_42">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_45">
+           <item>
+            <widget class="PlotWidget" name="gview_43">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_42">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_29">
+     <attribute name="title">
+      <string>PF5U</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_49">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_42">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_44">
+         <item>
+          <widget class="QLabel" name="label_43">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_46">
+           <item>
+            <widget class="PlotWidget" name="gview_44">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_43">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_50">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_43">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_45">
+         <item>
+          <widget class="QLabel" name="label_44">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_47">
+           <item>
+            <widget class="PlotWidget" name="gview_45">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_44">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_51">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_44">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_46">
+         <item>
+          <widget class="QLabel" name="label_45">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_48">
+           <item>
+            <widget class="PlotWidget" name="gview_46">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_45">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_52">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_45">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_47">
+         <item>
+          <widget class="QLabel" name="label_46">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_49">
+           <item>
+            <widget class="PlotWidget" name="gview_47">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_46">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_53">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_46">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_48">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_47">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_50">
+           <item>
+            <widget class="PlotWidget" name="gview_48">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_47">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_30">
+     <attribute name="title">
+      <string>PF5L</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_54">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_47">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_49">
+         <item>
+          <widget class="QLabel" name="label_48">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_51">
+           <item>
+            <widget class="PlotWidget" name="gview_49">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_48">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_55">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_48">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_50">
+         <item>
+          <widget class="QLabel" name="label_49">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_52">
+           <item>
+            <widget class="PlotWidget" name="gview_50">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_49">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_56">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_49">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_51">
+         <item>
+          <widget class="QLabel" name="label_50">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_53">
+           <item>
+            <widget class="PlotWidget" name="gview_51">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_50">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_57">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_50">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_52">
+         <item>
+          <widget class="QLabel" name="label_51">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_54">
+           <item>
+            <widget class="PlotWidget" name="gview_52">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_51">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_58">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_51">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_53">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_52">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_55">
+           <item>
+            <widget class="PlotWidget" name="gview_53">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_52">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_31">
+     <attribute name="title">
+      <string>PF6U</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_11">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_59">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_52">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_54">
+         <item>
+          <widget class="QLabel" name="label_53">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_56">
+           <item>
+            <widget class="PlotWidget" name="gview_54">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_53">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_60">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_53">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_55">
+         <item>
+          <widget class="QLabel" name="label_54">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_57">
+           <item>
+            <widget class="PlotWidget" name="gview_55">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_54">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_61">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_54">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_56">
+         <item>
+          <widget class="QLabel" name="label_55">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_58">
+           <item>
+            <widget class="PlotWidget" name="gview_56">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_55">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_62">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_55">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_57">
+         <item>
+          <widget class="QLabel" name="label_56">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_59">
+           <item>
+            <widget class="PlotWidget" name="gview_57">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_56">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_63">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_56">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_58">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_57">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_60">
+           <item>
+            <widget class="PlotWidget" name="gview_58">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_57">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_32">
+     <attribute name="title">
+      <string>PF6L</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_12">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_64">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_57">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_59">
+         <item>
+          <widget class="QLabel" name="label_58">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_61">
+           <item>
+            <widget class="PlotWidget" name="gview_59">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_58">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_65">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_58">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_60">
+         <item>
+          <widget class="QLabel" name="label_59">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_62">
+           <item>
+            <widget class="PlotWidget" name="gview_60">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_59">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_66">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_59">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_61">
+         <item>
+          <widget class="QLabel" name="label_60">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_63">
+           <item>
+            <widget class="PlotWidget" name="gview_61">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_60">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_67">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_60">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_62">
+         <item>
+          <widget class="QLabel" name="label_61">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_64">
+           <item>
+            <widget class="PlotWidget" name="gview_62">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_61">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_68">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_61">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_63">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_62">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_65">
+           <item>
+            <widget class="PlotWidget" name="gview_63">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_62">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_33">
+     <attribute name="title">
+      <string>PF7</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_13">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>911</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_69">
+       <attribute name="title">
+        <string>Ramp Up</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_62">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>531</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_64">
+         <item>
+          <widget class="QLabel" name="label_63">
+           <property name="text">
+            <string>Ramp Up</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_66">
+           <item>
+            <widget class="PlotWidget" name="gview_64">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_63">
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_70">
+       <attribute name="title">
+        <string>Plat Top</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_63">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_65">
+         <item>
+          <widget class="QLabel" name="label_64">
+           <property name="text">
+            <string>Plat Top</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_67">
+           <item>
+            <widget class="PlotWidget" name="gview_65">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_64">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_71">
+       <attribute name="title">
+        <string>Ramp Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_64">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_66">
+         <item>
+          <widget class="QLabel" name="label_65">
+           <property name="text">
+            <string>Ramp Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_68">
+           <item>
+            <widget class="PlotWidget" name="gview_66">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_65">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_72">
+       <attribute name="title">
+        <string>Break Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_65">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_67">
+         <item>
+          <widget class="QLabel" name="label_66">
+           <property name="text">
+            <string>Break Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_69">
+           <item>
+            <widget class="PlotWidget" name="gview_67">
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_66">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_73">
+       <attribute name="title">
+        <string>Controlled Down</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_66">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>901</width>
+          <height>528</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_68">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_67">
+           <property name="text">
+            <string>Controlled Down</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_70">
+           <item>
+            <widget class="PlotWidget" name="gview_68">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>600</width>
+               <height>500</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="twidget_67">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="PlotWidget" name="gview_7">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>20</y>
+      <width>590</width>
+      <height>481</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>520</y>
+      <width>353</width>
+      <height>119</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QCheckBox" name="checkBox">
+         <property name="text">
+          <string>PF1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_2">
+         <property name="text">
+          <string>PF2</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_3">
+         <property name="text">
+          <string>PF3U</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_4">
+         <property name="text">
+          <string>PF3L</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QCheckBox" name="checkBox_5">
+         <property name="text">
+          <string>PF4U</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_6">
+         <property name="text">
+          <string>PF4L</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_7">
+         <property name="text">
+          <string>PF5U</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_8">
+         <property name="text">
+          <string>PF5L</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QCheckBox" name="checkBox_9">
+         <property name="text">
+          <string>PF6U</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_10">
+         <property name="text">
+          <string>PF6L</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_11">
+         <property name="text">
+          <string>PF7</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_13">
+         <property name="text">
+          <string>All PF</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -88,7 +3201,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>915</width>
+     <width>1556</width>
      <height>22</height>
     </rect>
    </property>

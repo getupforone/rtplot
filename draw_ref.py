@@ -16,6 +16,8 @@ import numpy as np
 from pyqtgraph.ptime import time
 from pyqtgraph.Point import Point
 
+import time as timelib
+
 #ENDPOINT = "ipc://routing.ipc"
 ENDPOINT = "tcp://localhost:5555"
 form_class = uic.loadUiType("drawwindow.ui")[0]
@@ -36,8 +38,14 @@ class WindowClass(QMainWindow, form_class) :
         self.buff_size = 200
         self.vLine = pg.InfiniteLine(angle=90, movable=False)
         self.hLine = pg.InfiniteLine(angle=0, movable=False)
-        
+        timestr = timelib.strftime("%Y%m%d-%H%M%S")
+        print(timestr)
+
+        filename = "ref_%s.txt" %timestr
+        print(filename)
+        self.refNameTextEdit.setPlainText(filename)        
         self.updateButton.clicked.connect(self.updateButtonFunction)
+        self.Save2FileButton.clicked.connect(self.Save2FileButtonFunction)
         #버튼에 기능을 연결하는 코드
         self.p = self.gview
         self.p.addItem(self.vLine, ignoreBounds=True)
@@ -78,7 +86,24 @@ class WindowClass(QMainWindow, form_class) :
         #sub_msg = self._sub.recv()
         #self._log(sub_msg)
     def updateButtonFunction(self):
+        timestr = timelib.strftime("%Y%m%d-%H%M%S")
+        print(timestr)
+
+        filename = "ref_%s.txt" %timestr
+        print(filename)
+        self.refNameTextEdit.setPlainText(filename)
         self._update()
+    def Save2FileButtonFunction(self):
+        filename=self.refNameTextEdit.toPlainText()
+        self.f = open(filename,"w")
+        for i in range(len(self.c_pts)):
+            data = self.c_pts[i].y()
+            time = self.c_pts[i].x()
+            wdata = "%f,%f\n" %(data,time)
+            print(wdata)
+            self.f.write(wdata)
+        print("Write2File is Done!!\n")
+        self.f.close()
     @pyqtSlot()
     def cell_changed(self):
         print('cell changed')

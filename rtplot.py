@@ -23,8 +23,8 @@ class Subscriber():
     def __init__(self):
         context = zmq.Context.instance()
         sub = context.socket(zmq.SUB)
-        #sub.setsockopt(zmq.SUBSCRIBE, b'topic1')
         sub.setsockopt(zmq.SUBSCRIBE, b'topic1')
+        #sub.setsockopt(zmq.SUBSCRIBE, b"")
         #sub.setsockopt_string(zmq.SUBSCRIBE, '')
         sub.connect("tcp://localhost:7777")
         self.socket = sub
@@ -99,8 +99,13 @@ class WindowClass(QMainWindow, form_class) :
         _sub = Subscriber()
         print("thrd sub start")
         while True:
-            msg = _sub.recv();
-            print(msg)
+            msg = dict(zip('topic1', (x.decode() for x in _sub.recv())))
+            #id, msg = _sub.recv();
+            #msg = _sub.recv();
+            #print("[sub_thrd][%s] : %s" %(id, msg))
+            #print("[sub_thrd] : %s" %( msg))
+            for k,v in msg.items():
+                print(f'{k}: {v}')
             #self._log(msg)
     def _update(self):
         
