@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1556</width>
+    <width>1466</width>
     <height>818</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <widget class="QTextBrowser" name="txtBrw">
     <property name="geometry">
      <rect>
-      <x>930</x>
+      <x>860</x>
       <y>680</y>
       <width>601</width>
       <height>71</height>
@@ -36,14 +36,17 @@
    <widget class="QLabel" name="coorlabel">
     <property name="geometry">
      <rect>
-      <x>930</x>
+      <x>860</x>
       <y>650</y>
       <width>151</width>
       <height>21</height>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Panel</enum>
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
     </property>
     <property name="text">
      <string>TextLabel</string>
@@ -52,22 +55,31 @@
    <widget class="QPushButton" name="updateButton">
     <property name="geometry">
      <rect>
-      <x>1400</x>
-      <y>520</y>
-      <width>121</width>
-      <height>51</height>
+      <x>1320</x>
+      <y>510</y>
+      <width>140</width>
+      <height>70</height>
      </rect>
     </property>
     <property name="text">
      <string>updateButton</string>
     </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="Save2FileButton">
     <property name="geometry">
      <rect>
-      <x>1400</x>
+      <x>1320</x>
       <y>640</y>
-      <width>131</width>
+      <width>140</width>
       <height>41</height>
      </rect>
     </property>
@@ -78,9 +90,9 @@
    <widget class="QTextEdit" name="refNameTextEdit">
     <property name="geometry">
      <rect>
-      <x>1090</x>
+      <x>1020</x>
       <y>650</y>
-      <width>301</width>
+      <width>281</width>
       <height>21</height>
      </rect>
     </property>
@@ -90,7 +102,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>920</width>
+      <width>841</width>
       <height>750</height>
      </rect>
     </property>
@@ -101,7 +113,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>10</number>
     </property>
     <property name="usesScrollButtons">
      <bool>false</bool>
@@ -110,13 +122,13 @@
      <attribute name="title">
       <string>PF1</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_3">
+     <widget class="QTabWidget" name="subTabWidget_1">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
-        <height>731</height>
+        <width>835</width>
+        <height>740</height>
        </rect>
       </property>
       <property name="minimumSize">
@@ -128,7 +140,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab_3">
+      <widget class="QWidget" name="sub_tab_1_1">
        <attribute name="title">
         <string>Ramp Up</string>
        </attribute>
@@ -137,7 +149,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -172,8 +184,54 @@
          </item>
         </layout>
        </widget>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>540</y>
+          <width>120</width>
+          <height>30</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_68">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>540</y>
+          <width>62</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Offset Y</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_69">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>540</y>
+          <width>62</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Scale</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>540</y>
+          <width>120</width>
+          <height>30</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
-      <widget class="QWidget" name="tab_4">
+      <widget class="QWidget" name="sub_tab_1_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -221,7 +279,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_5">
+      <widget class="QWidget" name="sub_tab_1_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -269,7 +327,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_6">
+      <widget class="QWidget" name="sub_tab_1_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -317,7 +375,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_7">
+      <widget class="QWidget" name="sub_tab_1_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -380,12 +438,12 @@
      <attribute name="title">
       <string>PF2</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_4">
+     <widget class="QTabWidget" name="subTabWidget_2">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
+        <width>835</width>
         <height>731</height>
        </rect>
       </property>
@@ -398,7 +456,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab_13">
+      <widget class="QWidget" name="sub_tab_2_1">
        <attribute name="title">
         <string>Ramp Up</string>
        </attribute>
@@ -407,7 +465,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -443,7 +501,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_14">
+      <widget class="QWidget" name="sub_tab_2_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -491,7 +549,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_15">
+      <widget class="QWidget" name="sub_tab_2_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -539,7 +597,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_16">
+      <widget class="QWidget" name="sub_tab_2_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -587,7 +645,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_17">
+      <widget class="QWidget" name="sub_tab_2_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -650,12 +708,12 @@
      <attribute name="title">
       <string>PF3U</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_5">
+     <widget class="QTabWidget" name="subTabWidget_3u">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
+        <width>835</width>
         <height>731</height>
        </rect>
       </property>
@@ -668,7 +726,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab_18">
+      <widget class="QWidget" name="sub_tab_3u_1">
        <attribute name="title">
         <string>Ramp Up</string>
        </attribute>
@@ -677,7 +735,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -713,7 +771,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_19">
+      <widget class="QWidget" name="sub_tab_3u_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -761,7 +819,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_20">
+      <widget class="QWidget" name="sub_tab_3u_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -809,7 +867,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_21">
+      <widget class="QWidget" name="sub_tab_3u_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -857,7 +915,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_22">
+      <widget class="QWidget" name="sub_tab_3u_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -916,16 +974,16 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="sub_tab_3l_5">
      <attribute name="title">
       <string>PF3L</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_6">
+     <widget class="QTabWidget" name="subTabWidget_3l">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
+        <width>835</width>
         <height>731</height>
        </rect>
       </property>
@@ -938,7 +996,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab_34">
+      <widget class="QWidget" name="sub_tab_3l_1">
        <attribute name="title">
         <string>Ramp Up</string>
        </attribute>
@@ -947,7 +1005,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -983,7 +1041,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_35">
+      <widget class="QWidget" name="sub_tab_3l_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -1031,7 +1089,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_36">
+      <widget class="QWidget" name="sub_tab_3l_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -1079,7 +1137,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_37">
+      <widget class="QWidget" name="sub_tab_3l_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -1127,7 +1185,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_38">
+      <widget class="QWidget" name="sub_tab_3l_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -1190,12 +1248,12 @@
      <attribute name="title">
       <string>PF4U</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_7">
+     <widget class="QTabWidget" name="subTabWidget_4u">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
+        <width>835</width>
         <height>731</height>
        </rect>
       </property>
@@ -1208,7 +1266,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab_39">
+      <widget class="QWidget" name="sub_tab_4u_1">
        <attribute name="title">
         <string>Ramp Up</string>
        </attribute>
@@ -1217,7 +1275,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -1253,7 +1311,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_40">
+      <widget class="QWidget" name="sub_tab_4u_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -1301,7 +1359,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_41">
+      <widget class="QWidget" name="sub_tab_4u_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -1349,7 +1407,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_42">
+      <widget class="QWidget" name="sub_tab_4u_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -1397,7 +1455,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_43">
+      <widget class="QWidget" name="sub_tab_4u_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -1456,16 +1514,16 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_28">
+    <widget class="QWidget" name="sub_tab_4l_1">
      <attribute name="title">
       <string>PF4L</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_8">
+     <widget class="QTabWidget" name="subTabWidget_4l">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
+        <width>835</width>
         <height>731</height>
        </rect>
       </property>
@@ -1487,7 +1545,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -1523,7 +1581,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_45">
+      <widget class="QWidget" name="sub_tab_4l_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -1571,7 +1629,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_46">
+      <widget class="QWidget" name="sub_tab_4l_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -1619,7 +1677,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_47">
+      <widget class="QWidget" name="sub_tab_4l_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -1667,7 +1725,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_48">
+      <widget class="QWidget" name="sub_tab_4l_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -1726,16 +1784,16 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_29">
+    <widget class="QWidget" name="sub_tab_5u_1">
      <attribute name="title">
       <string>PF5U</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_9">
+     <widget class="QTabWidget" name="subTabWidget_5u">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
+        <width>835</width>
         <height>731</height>
        </rect>
       </property>
@@ -1746,7 +1804,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab_49">
        <attribute name="title">
@@ -1757,7 +1815,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -1793,7 +1851,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_50">
+      <widget class="QWidget" name="sub_tab_5u_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -1841,7 +1899,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_51">
+      <widget class="QWidget" name="sub_tab_5u_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -1889,7 +1947,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_52">
+      <widget class="QWidget" name="sub_tab_5u_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -1937,7 +1995,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_53">
+      <widget class="QWidget" name="sub_tab_5u_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -1996,16 +2054,16 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_30">
+    <widget class="QWidget" name="sub_tab_5l_1">
      <attribute name="title">
       <string>PF5L</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_10">
+     <widget class="QTabWidget" name="subTabWidget_5l">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
+        <width>835</width>
         <height>731</height>
        </rect>
       </property>
@@ -2016,7 +2074,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab_54">
        <attribute name="title">
@@ -2027,7 +2085,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -2063,7 +2121,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_55">
+      <widget class="QWidget" name="sub_tab_5u_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -2111,7 +2169,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_56">
+      <widget class="QWidget" name="sub_tab_5u_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -2159,7 +2217,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_57">
+      <widget class="QWidget" name="sub_tab_5u_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -2207,7 +2265,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_58">
+      <widget class="QWidget" name="sub_tab_5u_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -2266,16 +2324,16 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_31">
+    <widget class="QWidget" name="sub_tab_6u_1">
      <attribute name="title">
       <string>PF6U</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_11">
+     <widget class="QTabWidget" name="subTabWidget_6u">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
+        <width>835</width>
         <height>731</height>
        </rect>
       </property>
@@ -2286,7 +2344,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="tab_59">
        <attribute name="title">
@@ -2297,7 +2355,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -2333,7 +2391,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_60">
+      <widget class="QWidget" name="sub_tab_6u_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -2381,7 +2439,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_61">
+      <widget class="QWidget" name="sub_tab_6u_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -2429,7 +2487,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_62">
+      <widget class="QWidget" name="sub_tab_6u_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -2477,7 +2535,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_63">
+      <widget class="QWidget" name="sub_tab_6u_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -2536,16 +2594,16 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_32">
+    <widget class="QWidget" name="sub_tab_6l_1">
      <attribute name="title">
       <string>PF6L</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_12">
+     <widget class="QTabWidget" name="subTabWidget_6l">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
+        <width>835</width>
         <height>731</height>
        </rect>
       </property>
@@ -2556,7 +2614,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="tab_64">
        <attribute name="title">
@@ -2567,7 +2625,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -2603,7 +2661,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_65">
+      <widget class="QWidget" name="sub_tab_6l_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -2651,7 +2709,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_66">
+      <widget class="QWidget" name="sub_tab_6l_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -2699,7 +2757,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_67">
+      <widget class="QWidget" name="sub_tab_6l_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -2747,7 +2805,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_68">
+      <widget class="QWidget" name="sub_tab_6l_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -2806,16 +2864,16 @@
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_33">
+    <widget class="QWidget" name="sub_tab_7_1">
      <attribute name="title">
       <string>PF7</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_13">
+     <widget class="QTabWidget" name="subTabWidget_7">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>911</width>
+        <width>835</width>
         <height>731</height>
        </rect>
       </property>
@@ -2826,9 +2884,9 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
-      <widget class="QWidget" name="tab_69">
+      <widget class="QWidget" name="sub_tab_7_1">
        <attribute name="title">
         <string>Ramp Up</string>
        </attribute>
@@ -2837,7 +2895,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>901</width>
+          <width>831</width>
           <height>531</height>
          </rect>
         </property>
@@ -2873,7 +2931,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_70">
+      <widget class="QWidget" name="sub_tab_7_2">
        <attribute name="title">
         <string>Plat Top</string>
        </attribute>
@@ -2921,7 +2979,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_71">
+      <widget class="QWidget" name="sub_tab_7_3">
        <attribute name="title">
         <string>Ramp Down</string>
        </attribute>
@@ -2969,7 +3027,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_72">
+      <widget class="QWidget" name="sub_tab_7_4">
        <attribute name="title">
         <string>Break Down</string>
        </attribute>
@@ -3017,7 +3075,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_73">
+      <widget class="QWidget" name="sub_tab_7_5">
        <attribute name="title">
         <string>Controlled Down</string>
        </attribute>
@@ -3077,10 +3135,10 @@
      </widget>
     </widget>
    </widget>
-   <widget class="PlotWidget" name="gview_7">
+   <widget class="PlotWidget" name="gview_ALL">
     <property name="geometry">
      <rect>
-      <x>930</x>
+      <x>860</x>
       <y>20</y>
       <width>590</width>
       <height>481</height>
@@ -3090,7 +3148,7 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>930</x>
+      <x>860</x>
       <y>520</y>
       <width>353</width>
       <height>119</height>
@@ -3100,28 +3158,28 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QCheckBox" name="checkBox">
+        <widget class="QCheckBox" name="checkBox_PF1">
          <property name="text">
           <string>PF1</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_2">
+        <widget class="QCheckBox" name="checkBox_PF2">
          <property name="text">
           <string>PF2</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_3">
+        <widget class="QCheckBox" name="checkBox_PF3U">
          <property name="text">
           <string>PF3U</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_4">
+        <widget class="QCheckBox" name="checkBox_PF3L">
          <property name="text">
           <string>PF3L</string>
          </property>
@@ -3132,28 +3190,28 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QCheckBox" name="checkBox_5">
+        <widget class="QCheckBox" name="checkBox_PF4U">
          <property name="text">
           <string>PF4U</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_6">
+        <widget class="QCheckBox" name="checkBox_4L">
          <property name="text">
           <string>PF4L</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_7">
+        <widget class="QCheckBox" name="checkBox_PF5U">
          <property name="text">
           <string>PF5U</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_8">
+        <widget class="QCheckBox" name="checkBox_PF5L">
          <property name="text">
           <string>PF5L</string>
          </property>
@@ -3164,28 +3222,28 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QCheckBox" name="checkBox_9">
+        <widget class="QCheckBox" name="checkBox_PF6U">
          <property name="text">
           <string>PF6U</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_10">
+        <widget class="QCheckBox" name="checkBox_6L">
          <property name="text">
           <string>PF6L</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_11">
+        <widget class="QCheckBox" name="checkBox_PF7">
          <property name="text">
           <string>PF7</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_13">
+        <widget class="QCheckBox" name="checkBox_ALL">
          <property name="text">
           <string>All PF</string>
          </property>
@@ -3201,7 +3259,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1556</width>
+     <width>1466</width>
      <height>22</height>
     </rect>
    </property>

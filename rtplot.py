@@ -14,6 +14,7 @@ from PyQt5.QtCore import QSocketNotifier
 from PyQt5 import uic
 import numpy as np
 from pyqtgraph.ptime import time
+import h5py
 
 
 #ENDPOINT = "ipc://routing.ipc"
@@ -73,6 +74,7 @@ class WindowClass(QMainWindow, form_class) :
         #버튼에 기능을 연결하는 코드
         self.pBut.clicked.connect(self.button1Function)
         self.p = self.gview
+
         self.p.setRange(xRange=[0, self.buff_size], yRange=[0, 500])
         self.p2 = self.gview_2
         self.p2.setRange(xRange=[0, self.buff_size], yRange=[-250, 250])
