@@ -28,6 +28,7 @@ class SegmentEnum(enum.Enum):
     RAMP_DOWN  = 2
     BREAK_DOWN = 3
     CONTROLLED_DOWN = 4
+    CONCAT_ALL = 5
 class PFEnum(enum.Enum):
     PF1 = 0
     PF2 = 1
@@ -85,13 +86,16 @@ class SegmentPts():
         self.m_pts_rampdown = []
         self.m_pts_breakdown = []
         self.m_pts_controlleddown = []
+        self.m_pts_all = []
 
-        self.m_pts_rampup.append(Point(0,0))
-        self.m_pts_plattop.append(Point(0,0))
-        self.m_pts_rampdown.append(Point(0,0))
-        self.m_pts_breakdown.append(Point(0,0))
-        self.m_pts_controlleddown.append(Point(0,0))
+        # self.m_pts_rampup.append(Point(0,0))
+        # self.m_pts_plattop.append(Point(0,0))
+        # self.m_pts_rampdown.append(Point(0,0))
+        # self.m_pts_breakdown.append(Point(0,0))
+        # self.m_pts_controlleddown.append(Point(0,0))
 
+    def calc_all(self):
+        self.m_pts_all =  self.m_pts_rampup+ self.m_pts_plattop+self.m_pts_rampdown
 
     def get_len(self,segment):
         sgmt_len = -1
@@ -105,6 +109,8 @@ class SegmentPts():
             sgmt_len = len(self.m_pts_breakdown)
         elif segment == SegmentEnum.CONTROLLED_DOWN.value:
             sgmt_len = len(self.m_pts_controlleddown)
+        elif segment == SegmentEnum.CONCAT_ALL.value:
+            sgmt_len = len(self.m_pts_all)
         return sgmt_len
 
     def set_pt(self, segment, value):
@@ -125,18 +131,33 @@ class SegmentPts():
         if segment == SegmentEnum.RAMP_UP.value:
             if index < len(self.m_pts_rampup):
                 return self.m_pts_rampup[index]
+            else:
+                print("index > =len(self.m_pts_rampup) : %d"% len(self.m_pts_rampup))
         elif segment == SegmentEnum.PLAT_TOP.value:
             if index < len(self.m_pts_plattop):
                 return self.m_pts_plattop[index]
+            else:
+                print("index > =len(self.m_pts_plattop) : %d"% len(self.m_pts_plattop))
         elif segment == SegmentEnum.RAMP_DOWN.value:
             if index < len(self.m_pts_rampdown):
                 return self.m_pts_rampdown[index]
+            else:
+                print("index > =len(self.m_pts_rampdown) : %d"% len(self.m_pts_rampdown))
         elif segment == SegmentEnum.BREAK_DOWN.value:
             if index < len(self.m_pts_breakdown):
                 return self.m_pts_breakdown[index]
+            else:
+                print("index > =len(self.m_pts_breakdown) : %d"% len(self.m_pts_breakdown))
         elif segment == SegmentEnum.CONTROLLED_DOWN.value:
             if index < len(self.m_pts_controlleddown):
                 return self.m_pts_controlleddown[index]
+            else:
+                print("index > =len(self.m_pts_controlleddown) : %d"% len(self.m_pts_controlleddown))
+        elif segment == SegmentEnum.CONCAT_ALL.value:
+            if index < len(self.m_pts_all):
+                return self.m_pts_all[index]
+            else:
+                print("index > =len(self.m_pts_all) : %d"% len(self.m_pts_all))
         else:
             return False
 
@@ -163,9 +184,11 @@ class WindowClass(QMainWindow, form_class) :
         self.m_gviews = []
         self.m_twidgets = []
         self.m_chks = []
+        self.m_chks_status = []
 
         self.m_vbs = []
         self.m_pf_coils = PFCoils()
+        self.m_curves  = []
 
         for attr, value in self.__dict__.items():
             #m = re_p.match(attr)
@@ -186,15 +209,20 @@ class WindowClass(QMainWindow, form_class) :
             gv.scene().sigMouseClicked.connect(self.mouse_clicked)
             self.m_vbs.append(gv.getViewBox())
             gv.setRange(xRange=[0,10], yRange=[0, 10])
+            gv.showGrid(x = True, y = True, alpha = 1.0)
+            
+            self.m_curves.append(pg.PlotCurveItem()) 
+            # gv.addItem(self.m_curves[-1])
         for tw in self.m_twidgets:
             tw.setRowCount(1)
             tw.setColumnCount(2)
             tw.setHorizontalHeaderLabels(["X","Y"])
-            tw.setItem(0,0, QTableWidgetItem("0"))
+            # tw.setItem(0,0, QTableWidgetItem("0"))
 
         for chk in self.m_chks:
             chk.stateChanged.connect(self.checkBoxState)
-        
+            self.m_chks_status.append(False)
+            
         self.tabWidget.currentChanged.connect(self.onChange)
             # self.twidget.cellChanged.connect(self.cell_changed)
         print("tab position %d"% self.tabWidget.tabPosition())
@@ -245,6 +273,10 @@ class WindowClass(QMainWindow, form_class) :
 #        self.timer.start(0)
         
         #sub_msg = self._sub.recv()
+        
+#         self.curve = pg.PlotCurveItem(x=self.time, y=self.data,
+# #                    pen='g', brush='b',size = t_pts_size)
+#                     pen='g',size = t_pts_size)
         #self._log(sub_msg)
     def checkBoxState(self):
         msg = ""
@@ -254,19 +286,56 @@ class WindowClass(QMainWindow, form_class) :
             for chk in self.m_chks:
                 chk.setChecked(True)
             msg += "PF ALL is checked "
-        else:
-            for chk in self.m_chks:
-                chk.setChecked(False)
-            msg += "PF ALL is checked "
+        # else:
+        #     # for chk in self.m_chks:
+        #     #     chk.setChecked(False)
+        #     msg += "PF ALL is unchecked "
 
-        for chk_idx in range(len(self.m_chks)):
-            if self.m_chks[chk_idx].isChecked()== True:
-                chk_status[chk_idx] = True
-            else:
-                chk_status[chk_idx] = False
         self.gview_ALL.clear()
+        for chk_idx in range(len(self.m_chks)):
+            if chk_idx != len(self.m_chks) -1:
+                if self.m_chks[chk_idx].isChecked() == True:
+                    self.m_chks_status[chk_idx] = True
+                    print("chk_idx[%d] is checked"%chk_idx)
+                    #self.getDataAndPlot(-1,chk_idx,SegmentEnum.CONCAT_ALL.value)
+                else:
+                    self.m_chks_status[chk_idx] = False
+        self._update()
+        msg += "[PF1 %s][PF2 %s][PF3U %s][PF3L %s][PF4U %s][PF4L %s][PF5U %s][PF5L %s][PF6U %s][PF6L %s][PF7 %s]"%\
+                (self.m_chks_status[0],self.m_chks_status[1],self.m_chks_status[2],self.m_chks_status[3]\
+                ,self.m_chks_status[4],self.m_chks_status[5],self.m_chks_status[6],self.m_chks_status[7]\
+                ,self.m_chks_status[8],self.m_chks_status[9],self.m_chks_status[10])
 
         self._log(msg)
+
+    def getDataAndPlotAll(self,pos):
+        self.getDataAndPlot(pos,SegmentEnum.CONCAT_ALL.value)
+
+    def getDataAndPlot(self,pos, sub_pos):
+        t_data = np.zeros(self.buff_size)
+
+        t_time= np.zeros(self.buff_size)
+        self.gview_ALL.clear()
+        self.m_pf_coils.sgmt_pts_list[pos].calc_all()
+        t_pts_size = self.m_pf_coils.sgmt_pts_list[pos].get_len(sub_pos)
+        print("getDataAndPlot size = %d"%t_pts_size)
+        print("pos/sub_pos = (%d,%d)"%(pos,sub_pos))
+        for i in range(t_pts_size):
+            t_pt = self.m_pf_coils.get_data_pt(pos,sub_pos,i)
+            t_data[i] = t_pt.y()
+            t_time[i] = t_pt.x()
+            print("getDataAndPlot[%d]:%d "%(i, self.data[i]))
+
+        curve = pg.PlotCurveItem(x=t_time, y=t_data,
+                            pen='g', brush='b',size = t_pts_size)
+        for i in range(t_pts_size) :
+            scatter = pg.ScatterPlotItem(x=[t_time[i]], y=[t_data[i]], size = 10, pen='r', brush='b')
+            self.gview_ALL.addItem(scatter)
+        curve.setClickable(True)
+        self.gview_ALL.showGrid(x = True, y = True, alpha = 1.0)
+        self.gview_ALL.addItem(curve)
+        self.gview_ALL.repaint()
+
     def tabpos2idx(self,tab_pos,sub_tab_pos):
         return tab_pos*self.num_of_sgmt + sub_tab_pos
     def getTabPos(self):
@@ -408,14 +477,20 @@ class WindowClass(QMainWindow, form_class) :
         # self.chosen_points.append(self.mapFromGlobal(QtGui.QCursor.pos()))
         self.update()
     def _update(self):
+
+
+        self.data.fill(0)
+        self.time.fill(0)
         tab_pos, sub_tab_pos = self.getTabPos()
         t_idx = self.tabpos2idx(tab_pos,sub_tab_pos)
+        # self.m_gviews[t_idx].removeItem(self.m_curves[t_idx])
         self.m_gviews[t_idx].clear()
         t_pts_size = self.m_pf_coils.sgmt_pts_list[tab_pos].get_len(sub_tab_pos)
         for i in range(t_pts_size):
             t_pt = self.m_pf_coils.get_data_pt(tab_pos,sub_tab_pos,i)
             self.data[i] = t_pt.y()
             self.time[i] = t_pt.x()
+            print("pt = (%f,%f)"%(t_pt.y(),t_pt.x()))
             print("[%d]:%d "%(i, self.data[i]))
             row_count =  self.m_twidgets[t_idx].rowCount()
             if row_count < t_pts_size:
@@ -427,14 +502,30 @@ class WindowClass(QMainWindow, form_class) :
             y_item.setTextAlignment(Qt.AlignVCenter | Qt.AlignRight)
             self.m_twidgets[t_idx].setItem(i,0,x_item)
             self.m_twidgets[t_idx].setItem(i,1,y_item)
-        curve = pg.PlotCurveItem(x=self.time, y=self.data,
-                            pen='g', brush='b',size = t_pts_size)
+        # pw = pg.PlotWidget()
+        # pw.show()
+        # p1 = pw.plotItem
+        # p1.
+        
+
+        if t_pts_size > 1 :
+            t_pt = self.m_pf_coils.get_data_pt(tab_pos,sub_tab_pos,t_pts_size-1)
+            print("final pt = (%f,%f)"%(t_pt.y(),t_pt.x()))
+            self.m_curves[t_idx].setClickable(True)
+            # self.m_curves[t_idx].setData(x=self.time, y=self.data)
+            # self.m_gviews[t_idx].addItem(self.m_curves[t_idx])
+            
+            curve = pg.PlotCurveItem(x=self.time, y=self.data,
+                    pen='g', brush='b',size = t_pts_size)
+            curve.setClickable(True)
+            self.m_gviews[t_idx].addItem(curve)
+            
         for i in range(t_pts_size) :
             scatter = pg.ScatterPlotItem(x=[self.time[i]], y=[self.data[i]], size = 10, pen='r', brush='b')
             self.m_gviews[t_idx].addItem(scatter)
-        curve.setClickable(True)
+        
         self.m_gviews[t_idx].showGrid(x = True, y = True, alpha = 1.0)
-        self.m_gviews[t_idx].addItem(curve)
+        
         self.ptr += 1
         now = time()
         dt = now - self.lastTime
@@ -447,6 +538,9 @@ class WindowClass(QMainWindow, form_class) :
         self.m_gviews[t_idx].setTitle('%0.2f fps' % self.fps)
         self.m_gviews[t_idx].repaint()
 
+        for i in range(len(self.m_chks_status)):
+            if self.m_chks_status[i] == True:
+                self.getDataAndPlotAll(i)
         # self.p.clear()
         # #if self.ptr > self.buff_size: 
         # #   self.p.enableAutoRange(axis='x')
